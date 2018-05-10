@@ -1,0 +1,28 @@
+{
+    "rules": {
+        "users": {
+            "$uid": {
+                ".write": "$uid === auth.uid",
+                ".read": true
+            }
+        },
+        "thinh": {
+            "$uid": {
+                ".write": "$uid === auth.uid",
+                ".read": true,
+                "victims": {
+                    ".write": "auth != null",
+                    ".read": true
+                }
+            }
+        },
+        "conversations": {
+            "$uid": {
+                "$otherUid": {
+                    ".write": "$uid === auth.uid || $otherUid === auth.uid",
+                    ".read": "$uid == auth.uid"
+                }
+            }
+        }
+    }
+}

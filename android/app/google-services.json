@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "477266747288",
+    "firebase_url": "https://cuongapp-chat.firebaseio.com",
+    "project_id": "cuongapp-chat",
+    "storage_bucket": "cuongapp-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:477266747288:android:9917dbed46cccbd4",
+        "android_client_info": {
+          "package_name": "com.cuong.sms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "477266747288-jogmeif3fkihuplkkv9b82ar5elg9bb6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cuong.sms",
+            "certificate_hash": "0b5437d056a3329ef5bd6b725011db8ff839c0e9"
+          }
+        },
+        {
+          "client_id": "477266747288-8amaiomntd7pu0o4u1a8p0217pfnp40f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHvIkBScecA7OSk0cxg9KvsfrcQNi2_nc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "477266747288-8amaiomntd7pu0o4u1a8p0217pfnp40f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
