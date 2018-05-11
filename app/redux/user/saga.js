@@ -179,14 +179,39 @@ export const friendCheckFlow = function* () {
     }
 }
 
-export const removeFriendShip = function* () {
-    const action = yield take([consts.CHECK_FRIEND_STATUS]);
-    const statusFriend = yield call(checkFriendStatus);
+export const uploadAvatar = function* (action) {
     try {
-        if(statusFriend.status == 'ok'){
-            const remove = yield db.ref(statusFriend.path).remove();
-            yield put([actions.setMyCrush(null), actions.setFriend(null)])
-            statusFriend.phoneNumber = null;
+        const me = yield select(state => state.user.me)
+        if (me) {
+            const file = yield firebase.storage()
+                .ref('/avatar/' + me.uid + '.jpg')
+                .putFile(action.path);
+            me.avatar = file.downloadURL;
+        }
+        yield put(actions.setCurrentUser(me));
+        yield call(saveUser, {})
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
+
+export const removeFriendShip = function* () {
+    console.log('áncasj');
+    const action = yield take([consts.REMOVE_FRIEND_SHIP, consts.CHECK_FRIEND_STATUS]);
+    const statusFriend = yield call(checkFriendStatus);
+    const data = {};    
+    const me = yield select(state => state.user.me);
+    
+    try {
+        if((statusFriend.status == true) && (data[me.phoneNumber] == true)){
+            // console.log(data[me.phoneNumber]);
+            data[me.phoneNumber] == false;
+            const res = yield db.ref('/friendship').push().set(data);
+            // const remove = yield db.ref(statusFriend.path).remove();
+            // yield put([actions.setMyCrush(null), actions.setFriend(null)])
+            // statusFriend.phoneNumber = null;
+            return res;            
             yield put(NavigationActions.reset({
                 index: 0,
                 actions: [NavigationActions.navigate({ routeName: 'Thinh' })],
@@ -197,13 +222,3 @@ export const removeFriendShip = function* () {
     }
 }
 
-export const uploadImage = function* () {
-    const images = yield db.ref("/image");
-    try {
-        if(images){
-            
-        }
-    } catch (error) {
-        
-    }
-}

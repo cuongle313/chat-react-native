@@ -25,3 +25,17 @@ export const cancelCurrentCush = () => ({
 export const removeFriendShip = () => ({
     type: consts.REMOVE_FRIEND_SHIP
 })
+
+export const uploadAvatar = (path) => ({
+    type: consts.UPLOAD_AVATAR,
+    path
+})
+
+export const userUpdateProfile = (data) => ({
+    type: consts.CLIENT_UPDATE_PROFILE,
+    data
+})
+
+export const saveUser = () => ({
+    type: consts.SAVE_USER
+})

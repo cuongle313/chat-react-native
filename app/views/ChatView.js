@@ -22,7 +22,7 @@ class ChatView extends Component {
         this.messagesRef.push().set({
             sendBy: this.props.me.phoneNumber,
             message,
-            createdAt: firebase.database.ServerValue.TIMESTAMP
+            createdAt: firebase.database.ServerValue.TIMESTAMP,
         })
     }
 

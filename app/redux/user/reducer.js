@@ -23,6 +23,12 @@ export default (state = initialState, action) => {
                 myCrushPhoneNumber: action.phoneNumber
             }
         }
+        case consts.REMOVE_FRIEND_SHIP: {
+            return {
+                ...state,
+                myCrushPhoneNumber: action.phoneNumber
+            }
+        }
 
         default:
             return state

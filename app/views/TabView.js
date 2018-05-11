@@ -10,6 +10,7 @@ import TimelineView from './TimelineView';
 import SettingView from './SettingView';
 import { setTimeout } from 'core-js';
 import Slider from './Slider';
+import ProfileView from './ProfileView';
 
 const initialLayout = {
     height: 0,
@@ -28,7 +29,7 @@ const ChatRoute = () => <ChatView />;
 const HomeRoute = () => <Slider />;
 const CalendarRoute = () => <TimelineView />;
 const NotificationRoute = () => <View style={[styles.container, { backgroundColor: '#673ab7' }]} />;
-const SettingRoute = () => <SettingView />;
+const ProfileRoute = () => <ProfileView/>;
 
 export default class TabView extends React.Component {
     constructor(props) {
@@ -36,7 +37,7 @@ export default class TabView extends React.Component {
     }
 
     state = {
-        index: 0,
+        index: 4,
         routes: [
             { key: 'chat', title: 'chat' },
             { key: 'home', title: 'home' },            
@@ -61,7 +62,7 @@ export default class TabView extends React.Component {
         home: HomeRoute,        
         calendar: CalendarRoute,
         notification: NotificationRoute,
-        setting: SettingRoute,
+        setting: ProfileRoute,
     });
 
     render() {

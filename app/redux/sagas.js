@@ -6,7 +6,8 @@ import * as userSagas from './user/saga';
 const sagas = function* () {
     yield takeEvery(consts.LOGOUT, userSagas.logout);
     yield takeEvery(consts.LOGIN_SUCCESS, userSagas.loginSuccess);
-    yield takeEvery(consts.SAVE_USER, firebaseSagas.saveUser);
+    yield takeEvery(consts.SAVE_USER, userSagas.saveUser);
+    yield takeLatest(consts.UPLOAD_AVATAR, userSagas.uploadAvatar);
     // yield takeEvery(consts.SET_FRIEND, userSagas.setFriend);
 }
 

@@ -11,6 +11,8 @@
     "react-native": "0.54.2",
     "react-native-calendar-picker": "^5.18.0",
     "react-native-card-stack-swiper": "^1.0.48",
+    "react-native-datepicker": "^1.7.2",
+    "react-native-elements": "^0.19.1",
     "react-native-firebase": "^3.3.1",
     "react-native-image-crop-picker": "^0.20.1",
     "react-native-status-bar-height": "^2.0.0",

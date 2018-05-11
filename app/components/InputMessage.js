@@ -8,8 +8,9 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ImagePicker from 'react-native-image-crop-picker';
+import * as variables from './../styles/variables';
 
-import * as variables from './../styles/variables'
+// import Emoticons from 'react-native-emoticons';
 
 export default class InputMessage extends PureComponent {
     constructor(props) {
@@ -22,7 +23,9 @@ export default class InputMessage extends PureComponent {
     state = {
         text: '',
         image: null,
-        images: null
+        images: null,
+        selectedEmoji: null,
+        showPicker: false,
     }
 
     componentDidMount = () => {
@@ -95,11 +98,11 @@ export default class InputMessage extends PureComponent {
                     <TextInput style={styles.input} autoGrow multiline maxHeight={70} underlineColorAndroid="transparent" placeholder="Soạn tin nhắn..." placeholderTextColor={variables.borderColor}
                         value={this.state.text}
                         onChangeText={this.onChangeText} />
-                    <Icon name="sentiment-satisfied" size={20} color={variables.btSendColor} style={styles.sendIcon} onPress={this.send} />
+                    <Icon name="sentiment-satisfied" size={20} color={variables.btSendColor} style={styles.sendIcon} onPress={this.state.selectedEmoji} />
                     <Icon name="image" size={20} color={variables.btSendColor} style={styles.sendIcon} onPress={this.sendImage} />
                     <Icon name="send" size={20} color={variables.btSendColor} style={styles.sendIcon} onPress={this.send} />
                 </View>
-
+                
             </Animated.View>
         )
     }
