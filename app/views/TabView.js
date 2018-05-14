@@ -11,6 +11,7 @@ import SettingView from './SettingView';
 import { setTimeout } from 'core-js';
 import Slider from './Slider';
 import ProfileView from './ProfileView';
+import FabView from './FabView';
 
 const initialLayout = {
     height: 0,
@@ -26,10 +27,10 @@ const icons = {
     setting: <IconFeather name="more-horizontal" size={iconSize} color={variables.invertColor} />,
 }
 const ChatRoute = () => <ChatView />;
-const HomeRoute = () => <Slider />;
+const HomeRoute = () => <FabView />;
 const CalendarRoute = () => <TimelineView />;
 const NotificationRoute = () => <View style={[styles.container, { backgroundColor: '#673ab7' }]} />;
-const ProfileRoute = () => <ProfileView/>;
+const ProfileRoute = () => <SettingView/>;
 
 export default class TabView extends React.Component {
     constructor(props) {
@@ -59,10 +60,10 @@ export default class TabView extends React.Component {
 
     renderScene = SceneMap({
         chat: ChatRoute,
-        home: HomeRoute,        
+        home: FabView,        
         calendar: CalendarRoute,
         notification: NotificationRoute,
-        setting: ProfileRoute,
+        setting: SettingView,
     });
 
     render() {

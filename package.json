@@ -9,6 +9,7 @@
   "dependencies": {
     "react": "16.3.1",
     "react-native": "0.54.2",
+    "react-native-action-button": "^2.8.4",
     "react-native-calendar-picker": "^5.18.0",
     "react-native-card-stack-swiper": "^1.0.48",
     "react-native-datepicker": "^1.7.2",
